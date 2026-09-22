@@ -89,32 +89,35 @@ button:focus-visible,a:focus-visible{outline:2px solid #C9A96B;outline-offset:3p
 .hero-brand{
   position:absolute;
   z-index:2;
-  top:calc(18px + env(safe-area-inset-top));
+  top:calc(8px + env(safe-area-inset-top));
   left:50%;
   transform:translateX(-50%);
   width:max-content;
+  padding:7px 12px 8px;
   text-align:center;
-  color:#0F3B32;
-  text-shadow:0 1px 10px rgba(250,247,239,.38);
+  color:#073B32;
+  background:radial-gradient(ellipse at center,rgba(250,247,239,.34) 0%,rgba(250,247,239,.18) 46%,rgba(250,247,239,0) 76%);
+  text-shadow:0 1px 9px rgba(250,247,239,.55);
 }
 .brand-name{
   font-family:Georgia,"Times New Roman",serif;
-  font-size:20px;
+  font-size:19px;
   line-height:1;
   font-weight:400;
-  letter-spacing:2px;
+  letter-spacing:2.4px;
   white-space:nowrap;
 }
 .brand-lead{
-  font-size:1.14em;
-  line-height:0;
+  font-size:1em;
+  line-height:inherit;
 }
 .brand-tagline{
-  margin-top:8px;
-  font-size:7.5px;
+  margin-top:7px;
+  font-size:7.8px;
   line-height:1.2;
-  letter-spacing:3.2px;
+  letter-spacing:3.4px;
   font-weight:600;
+  color:#174C43;
   white-space:nowrap;
 }
 .home-intro{
