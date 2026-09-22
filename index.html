@@ -510,5 +510,69 @@ function switchTab(btn,id){document.querySelectorAll('.tabs button').forEach(b=>
 window.addEventListener('popstate',()=>{const id=location.hash.slice(1);if(data[id])render(id,true);else{document.getElementById('detail').classList.remove('active');document.getElementById('detail').innerHTML='';document.getElementById('home').style.display='block'}});
 window.addEventListener('DOMContentLoaded',()=>{const id=location.hash.slice(1);if(data[id])render(id,true)});
 </script>
+<div id="qr-generator" class="qr-modal" aria-hidden="true">
+  <div class="qr-sheet" role="dialog" aria-modal="true" aria-labelledby="qr-title">
+    <button class="qr-close" type="button" aria-label="Close QR generator" onclick="closeQrGenerator()">×</button>
+    <div class="qr-kicker">HOMEFEEL STAYS</div>
+    <h2 id="qr-title">Guest Guide QR</h2>
+    <p class="qr-description">Scan to open the Digital Guest Guide.</p>
+    <div class="qr-code-wrap"><canvas id="guestQrCanvas" width="240" height="240" aria-label="Digital Guest Guide QR code"></canvas></div>
+    <div class="qr-url">anjan9573.github.io/digital-guest-guide/</div>
+    <button class="qr-download" type="button" onclick="downloadGuestQr()">Download QR</button>
+  </div>
+</div>
+<style>
+.qr-modal{position:fixed;inset:0;z-index:1000;display:none;align-items:flex-end;justify-content:center;background:rgba(15,59,50,.28);padding:16px}
+.qr-modal.open{display:flex}
+.qr-sheet{position:relative;width:min(100%,390px);padding:27px 20px 22px;border:1px solid #E4DED2;border-radius:22px 22px 18px 18px;background:#FAF7EF;text-align:center;box-shadow:0 14px 45px rgba(30,25,18,.16)}
+.qr-close{position:absolute;right:14px;top:10px;width:34px;height:34px;border:0;background:transparent;color:#0F3B32;font-size:27px;font-weight:300;cursor:pointer}
+.qr-kicker{font-size:9px;letter-spacing:3px;color:#9A7538;font-weight:700}
+.qr-sheet h2{margin:8px 0 5px;font-family:"Cormorant Garamond",Georgia,serif;font-size:30px;line-height:1;color:#0F3B32;font-weight:400}
+.qr-description{margin:0 0 17px;font-size:11px;color:#6B6B6B}
+.qr-code-wrap{display:grid;place-items:center;width:250px;height:250px;margin:0 auto 13px;background:#fff;border:1px solid #E4DED2;border-radius:14px}
+#guestQrCanvas{width:230px;height:230px;image-rendering:pixelated}
+.qr-url{font-size:9px;color:#756F67;letter-spacing:.4px;word-break:break-all;margin-bottom:15px}
+.qr-download{min-height:44px;width:100%;border:1px solid #0F3B32;border-radius:11px;background:#0F3B32;color:#fff;font-size:11px;font-weight:650;cursor:pointer}
+@media(min-width:700px){.qr-modal{align-items:center}.qr-sheet{border-radius:22px}}
+</style>
+<script>
+const GUEST_GUIDE_URL="https://anjan9573.github.io/digital-guest-guide/";
+function openQrGenerator(){
+  const modal=document.getElementById("qr-generator");
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden","false");
+  drawGuestQr();
+}
+function closeQrGenerator(){
+  const modal=document.getElementById("qr-generator");
+  modal.classList.remove("open");
+  modal.setAttribute("aria-hidden","true");
+}
+function drawGuestQr(){
+  const canvas=document.getElementById("guestQrCanvas");
+  if(!canvas)return;
+  const ctx=canvas.getContext("2d");
+  const size=230;
+  canvas.width=size; canvas.height=size;
+  ctx.fillStyle="#fff"; ctx.fillRect(0,0,size,size);
+  if(window.QRCode){
+    QRCode.toCanvas(canvas,GUEST_GUIDE_URL,{width:size,margin:2,color:{dark:"#0F3B32",light:"#FFFFFF"}});
+  }
+}
+function downloadGuestQr(){
+  const canvas=document.getElementById("guestQrCanvas");
+  if(!canvas)return;
+  const link=document.createElement("a");
+  link.download="homefeel-stays-guest-guide-qr.png";
+  link.href=canvas.toDataURL("image/png");
+  link.click();
+}
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeQrGenerator()});
+document.addEventListener("click",e=>{
+  const modal=document.getElementById("qr-generator");
+  if(e.target===modal)closeQrGenerator();
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.4/build/qrcode.min.js"></script>
 </body>
 </html>
