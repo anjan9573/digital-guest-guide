@@ -62,7 +62,7 @@ button:focus-visible,a:focus-visible{outline:2px solid #C9A96B;outline-offset:3p
 .hero-image{
   position:relative;
   width:100%;
-  height:198px;
+  height:218px;
   overflow:hidden;
   background:#eee8dd;
 }
@@ -71,29 +71,35 @@ button:focus-visible,a:focus-visible{outline:2px solid #C9A96B;outline-offset:3p
   width:100%;
   height:100%;
   object-fit:cover;
-  object-position:center 52%;
+  object-position:center 50%;
 }
 .hero-image:after{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(180deg,rgba(15,12,8,.06) 0%,rgba(15,12,8,0) 55%,rgba(250,247,239,.16) 100%);
+  background:linear-gradient(
+    180deg,
+    rgba(15,12,8,.035) 0%,
+    rgba(15,12,8,0) 48%,
+    rgba(250,247,239,.16) 72%,
+    #FAF7EF 100%
+  );
   pointer-events:none;
 }
 .hero-brand{
   position:absolute;
   z-index:2;
-  top:calc(20px + env(safe-area-inset-top));
+  top:calc(18px + env(safe-area-inset-top));
   left:50%;
   transform:translateX(-50%);
   width:max-content;
   text-align:center;
   color:#0F3B32;
-  text-shadow:0 1px 10px rgba(250,247,239,.38);
+  text-shadow:0 1px 12px rgba(250,247,239,.42);
 }
 .brand-name{
   font-family:Georgia,"Times New Roman",serif;
-  font-size:20px;
+  font-size:19px;
   line-height:1;
   font-weight:400;
   letter-spacing:2px;
@@ -105,16 +111,18 @@ button:focus-visible,a:focus-visible{outline:2px solid #C9A96B;outline-offset:3p
 }
 .brand-tagline{
   margin-top:8px;
-  font-size:7.5px;
+  font-size:7.2px;
   line-height:1.2;
-  letter-spacing:3.2px;
+  letter-spacing:3.1px;
   font-weight:600;
   white-space:nowrap;
 }
 .home-intro{
   position:relative;
+  z-index:2;
+  margin-top:-34px;
   text-align:center;
-  padding:22px var(--page-padding) 0;
+  padding:0 var(--page-padding) 0;
 }
 .home-intro h1{
   margin:0;
@@ -123,7 +131,7 @@ button:focus-visible,a:focus-visible{outline:2px solid #C9A96B;outline-offset:3p
   line-height:1.02;
   font-weight:400;
   letter-spacing:-1px;
-  color:var(--text);
+  color:#0F3B32;
 }
 .home-intro .subtitle{
   margin:10px 0 0;
@@ -249,7 +257,7 @@ button:focus-visible,a:focus-visible{outline:2px solid #C9A96B;outline-offset:3p
   .arrow{font-size:21px}
 }
 @media(min-width:400px){
-  .hero-image{height:202px}
+  .hero-image{height:224px}
   .item{min-height:74px}
 }
 @media(min-width:600px){
