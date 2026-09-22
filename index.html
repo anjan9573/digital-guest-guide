@@ -86,27 +86,6 @@ button:focus-visible,a:focus-visible{outline:2px solid #C9A96B;outline-offset:3p
   );
   pointer-events:none;
 }
-.hero-brand{
-  position:absolute;
-  z-index:2;
-  top:calc(4px + env(safe-area-inset-top));
-  left:50%;
-  transform:translateX(-50%);
-  width:min(164px,45vw);
-  display:flex;
-  justify-content:center;
-  align-items:flex-start;
-  pointer-events:none;
-  filter:drop-shadow(0 1px 9px rgba(250,247,239,.28));
-}
-.hero-logo{
-  display:block;
-  width:100%;
-  height:auto;
-  max-height:178px;
-  object-fit:contain;
-}
-.brand-name,.brand-lead,.brand-tagline{display:none;}
 .home-intro{
   position:relative;
   z-index:2;
@@ -327,9 +306,6 @@ button:focus-visible,a:focus-visible{outline:2px solid #C9A96B;outline-offset:3p
 <header class="home-header">
   <div class="hero-image">
     <img src="assets/welcome-hero.png" alt="HomeFeel Stays premium living room">
-    <div class="hero-brand" aria-label="HomeFeel Stays">
-      <img class="hero-logo" src="assets/homefeel-stays-logo.png" alt="HomeFeel Stays">
-    </div>
   </div>
   <div class="home-intro">
     <h1>Welcome</h1>
