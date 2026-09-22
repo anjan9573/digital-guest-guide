@@ -3,120 +3,64 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#111111">
-<title>Digital Guest Guide</title>
+<meta name="theme-color" content="#ffffff">
+<title>Guest Guide</title>
 <style>
-:root{--bg:#f6f4ef;--card:#fff;--text:#1d1d1b;--muted:#6d6a64;--accent:#b08a45;--line:#e8e3da}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
-main{max-width:620px;margin:auto;padding:22px 16px 40px}.hero{text-align:center;padding:24px 8px 18px}.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:11px;color:var(--accent);font-weight:700}.hero h1{font-family:Georgia,serif;font-size:34px;margin:8px 0 6px}.hero p{margin:0;color:var(--muted);font-size:15px}.property{font-size:12px;color:var(--muted);margin-top:10px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;margin:12px 0;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.035)}
-.card h2{font-size:17px;margin:0;padding:17px 18px;border-bottom:1px solid var(--line)}.content{padding:16px 18px;color:#45423d;line-height:1.65;font-size:14px}.content b{color:var(--text)}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px}.tile{display:block;text-decoration:none;color:var(--text);background:#faf9f6;border:1px solid var(--line);border-radius:14px;padding:15px}.tile b{display:block;font-size:14px;margin-bottom:4px}.tile span{font-size:12px;color:var(--muted)}
-.btn{display:block;text-align:center;background:var(--text);color:#fff;text-decoration:none;border-radius:12px;padding:12px;margin-top:12px;font-weight:600}.btn.gold{background:var(--accent)}.small{font-size:12px;color:var(--muted);margin-top:8px}.footer{text-align:center;color:var(--muted);font-size:12px;padding:24px 0 4px}
-@media(max-width:390px){.grid{grid-template-columns:1fr}.hero h1{font-size:30px}}
+:root{--bg:#fff;--text:#171717;--muted:#737373;--line:#e9e9e9;--accent:#b08a45}
+*{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+body{min-height:100vh}.app{max-width:520px;margin:auto;min-height:100vh;background:#fff}
+.header{text-align:center;padding:54px 24px 28px}.header h1{font-family:Georgia,serif;font-weight:500;font-size:40px;line-height:1.1;margin:0 0 10px}.header p{text-transform:uppercase;letter-spacing:4px;font-size:11px;font-weight:600;margin:0;color:#444}
+.menu{border-top:1px solid var(--line)}.item{width:100%;display:flex;align-items:center;gap:18px;padding:22px 24px;background:#fff;border:0;border-bottom:1px solid var(--line);text-align:left;color:var(--text);cursor:pointer}
+.icon{width:42px;height:42px;display:grid;place-items:center;flex:0 0 42px;border:1px solid #ddd;border-radius:50%;font-size:20px}.item-text{flex:1}.item-title{font-size:16px;font-weight:700;margin-bottom:5px}.item-sub{font-size:13px;color:var(--muted)}.arrow{font-size:28px;font-weight:300;color:#777;line-height:1}
+.detail{display:none;min-height:100vh}.detail.active{display:block}.home.hidden{display:none}
+.detail-top{display:flex;align-items:center;padding:18px 20px;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);z-index:2}
+.back{border:0;background:none;font-size:15px;padding:8px 8px 8px 0;cursor:pointer;color:#333}.detail-title{font-size:17px;font-weight:700;margin:auto;padding-right:45px}
+.detail-hero{text-align:center;padding:48px 24px 28px}.detail-hero .big-icon{width:72px;height:72px;border:1px solid #ddd;border-radius:50%;display:grid;place-items:center;margin:0 auto 22px;font-size:31px}.detail-hero h2{font-family:Georgia,serif;font-size:38px;font-weight:500;margin:0 0 10px}.detail-hero p{color:var(--muted);margin:0;font-size:14px}
+.info{margin:0 20px 24px;border:1px solid #ededed;border-radius:18px;overflow:hidden}.row{padding:20px;border-bottom:1px solid #ededed}.row:last-child{border-bottom:0}.label{text-transform:uppercase;letter-spacing:3px;font-size:10px;font-weight:700;color:#777;margin-bottom:10px}.value{font-size:17px;line-height:1.6}.value strong{font-weight:700}.note{font-size:12px;color:#777;margin-top:10px;line-height:1.5}
+.actions{padding:0 20px 28px}.btn{display:block;text-align:center;text-decoration:none;background:#111;color:#fff;border-radius:14px;padding:14px;margin-top:10px;font-weight:600}.btn.gold{background:var(--accent)}
+.footer{text-align:center;color:#999;font-size:11px;padding:24px}
+@media(max-width:390px){.header h1{font-size:34px}.item{padding:19px 18px}}
 </style>
 </head>
 <body>
-<main>
-<section class="hero">
-<div class="eyebrow">Welcome</div>
-<h1>Digital Guest Guide</h1>
-<p>Everything you need for a comfortable stay.</p>
-<div class="property">Urban Nest • Gachibowli, Hyderabad</div>
-</section>
+<div class="app">
 
-<div class="card"><div class="grid">
-<a class="tile" href="#wifi"><b>📶 Wi‑Fi</b><span>Internet details</span></a>
-<a class="tile" href="#checkin"><b>🔑 Check‑In</b><span>Arrival information</span></a>
-<a class="tile" href="#checkout"><b>🧳 Check‑Out</b><span>Departure steps</span></a>
-<a class="tile" href="#amenities"><b>✨ Amenities</b><span>What is available</span></a>
-<a class="tile" href="#know"><b>ℹ️ Things to Know</b><span>Useful information</span></a>
-<a class="tile" href="#directions"><b>📍 Directions</b><span>Find the property</span></a>
-<a class="tile" href="#explore"><b>🌆 Explore</b><span>Nearby places</span></a>
-<a class="tile" href="#rules"><b>🏠 House Rules</b><span>Please note</span></a>
-</div></div>
-
-<section class="card" id="wifi"><h2>📶 Wi‑Fi</h2><div class="content">
-<b>Network:</b> UrbanNest_Guest<br>
-<b>Password:</b> Welcome@123<br>
-<div class="small">If you have any connection problem, please contact the host.</div>
-</div></section>
-
-<section class="card" id="checkin"><h2>🔑 Check‑In</h2><div class="content">
-<b>Check‑in time:</b> 2:00 PM<br>
-<b>Check‑out time:</b> 11:00 AM<br>
-<b>Access:</b> Self check‑in using the smart lock.<br>
-<b>Door code:</b> 2580#<br>
-<div class="small">Dummy information — replace the access details before sharing this guide with guests.</div>
-</div></section>
-
-<section class="card" id="checkout"><h2>🧳 Check‑Out</h2><div class="content">
-<b>Check‑out time:</b> 11:00 AM<br><br>
-1. Switch off AC, lights and appliances.<br>
-2. Check drawers, cupboards and the refrigerator for belongings.<br>
-3. Close all windows and lock the main door.<br>
-4. Return the keys/access device as instructed.<br>
-5. Send a quick WhatsApp message after leaving.
-</div></section>
-
-<section class="card" id="amenities"><h2>✨ Amenities</h2><div class="content">
-• Air conditioning<br>
-• High-speed Wi‑Fi<br>
-• Smart TV<br>
-• Hot water<br>
-• Refrigerator<br>
-• Washing machine<br>
-• Fully equipped kitchen<br>
-• Towels and basic toiletries<br>
-• Iron and ironing board<br>
-• Free parking
-</div></section>
-
-<section class="card" id="know"><h2>ℹ️ Things to Know</h2><div class="content">
-<b>Electricity:</b> Please keep the AC and lights switched off when leaving the apartment.<br><br>
-<b>Hot water:</b> Hot water is available through the geyser. Please allow a few minutes for heating.<br><br>
-<b>Support:</b> For assistance during your stay, contact the host.
-<a class="btn" href="tel:+919876543210">📞 Call Host</a>
-<a class="btn gold" href="https://wa.me/919876543210">💬 WhatsApp Host</a>
-</div></section>
-
-<section class="card" id="directions"><h2>📍 Directions</h2><div class="content">
-<b>Property:</b> Urban Nest, Gachibowli, Hyderabad<br>
-<b>Landmark:</b> Near Main Road / Central Mall<br>
-<div class="small">Dummy address — replace this with the exact property address.</div>
-<a class="btn" href="https://www.google.com/maps/search/?api=1&query=Gachibowli%2C%20Hyderabad" target="_blank" rel="noopener">🗺️ Open in Google Maps</a>
-</div></section>
-
-<section class="card" id="explore"><h2>🌆 Explore the Area</h2><div class="content">
-<b>🍽️ Restaurants:</b> Local restaurants and cafés within 5–10 minutes.<br>
-<b>🛒 Shopping:</b> Supermarket and convenience stores nearby.<br>
-<b>☕ Cafés:</b> Popular coffee shops around Gachibowli.<br>
-<b>🏥 Pharmacy:</b> 24/7 pharmacy available nearby.<br>
-<b>🚇 Metro:</b> Raidurg Metro Station — approximately 10–15 minutes by car.<br>
-<b>✈️ Airport:</b> Rajiv Gandhi International Airport — approximately 30–40 minutes, depending on traffic.
-</div></section>
-
-<section class="card" id="rules"><h2>🏠 House Rules</h2><div class="content">
-• No parties or events.<br>
-• No smoking inside the apartment.<br>
-• Keep noise reasonable, especially after 10 PM.<br>
-• No additional guests without prior approval.<br>
-• Please treat furniture and appliances with care.<br>
-• Report any damage or maintenance issue promptly.<br>
-• Please do not move furniture between rooms.
-</div></section>
-
-<section class="card"><h2>✅ Before You Go</h2><div class="content">
-☐ Check your belongings.<br>
-☐ Switch off lights and AC.<br>
-☐ Close windows and taps.<br>
-☐ Dispose of food and waste properly.<br>
-☐ Lock the main door.<br>
-☐ Complete the check‑out instructions.<br>
-☐ Message the host once you have left.
-</div></section>
-
+<div id="home" class="home">
+<header class="header"><h1>Welcome</h1><p>ENJOY YOUR STAY</p></header>
+<nav class="menu">
+<button class="item" onclick="openDetail('wifi')"><span class="icon">⌁</span><span class="item-text"><span class="item-title">WI-FI</span><span class="item-sub">Network and password</span></span><span class="arrow">›</span></button>
+<button class="item" onclick="openDetail('checkin')"><span class="icon">🔑</span><span class="item-text"><span class="item-title">Check In/Out</span><span class="item-sub">Arrival and departure</span></span><span class="arrow">›</span></button>
+<button class="item" onclick="openDetail('amenities')"><span class="icon">▣</span><span class="item-text"><span class="item-title">Amenities</span><span class="item-sub">What we provide</span></span><span class="arrow">›</span></button>
+<button class="item" onclick="openDetail('know')"><span class="icon">ⓘ</span><span class="item-text"><span class="item-title">Things to Know</span><span class="item-sub">Helpful tips</span></span><span class="arrow">›</span></button>
+<button class="item" onclick="openDetail('directions')"><span class="icon">⌾</span><span class="item-text"><span class="item-title">Directions</span><span class="item-sub">Finding us</span></span><span class="arrow">›</span></button>
+<button class="item" onclick="openDetail('explore')"><span class="icon">◫</span><span class="item-text"><span class="item-title">Explore the Area</span><span class="item-sub">Eat, see and do</span></span><span class="arrow">›</span></button>
+<button class="item" onclick="openDetail('rules')"><span class="icon">▤</span><span class="item-text"><span class="item-title">House Rules</span><span class="item-sub">For a pleasant stay</span></span><span class="arrow">›</span></button>
+<button class="item" onclick="openDetail('before')"><span class="icon">✓</span><span class="item-text"><span class="item-title">Before You Go</span><span class="item-sub">Quick check-out checklist</span></span><span class="arrow">›</span></button>
+</nav>
 <div class="footer">Guest information • Mobile friendly • Available 24/7</div>
-</main>
+</div>
+
+<div id="detail" class="detail">
+<div class="detail-top"><button class="back" onclick="goHome()">‹ Back</button><div id="detailTitle" class="detail-title"></div></div>
+<div id="detailContent"></div>
+</div>
+
+</div>
+
+<script>
+const data={
+wifi:{title:'Wi-Fi',icon:'⌁',subtitle:'Network and password',body:`<div class="info"><div class="row"><div class="label">Network</div><div class="value"><strong>UrbanNest_Guest</strong></div></div><div class="row"><div class="label">Password</div><div class="value"><strong>Welcome@123</strong></div></div></div><div class="detail-hero" style="padding-top:8px"><p>Dummy details — replace these later with your actual Wi-Fi information.</p></div>`},
+checkin:{title:'Check In/Out',icon:'🔑',subtitle:'Arrival and departure',body:`<div class="detail-hero"><div class="big-icon">🔑</div><h2>Check In/Out</h2><p>Everything you need for arrival and departure.</p></div><div class="info"><div class="row"><div class="label">Check-in</div><div class="value"><strong>2:00 PM</strong></div></div><div class="row"><div class="label">Check-out</div><div class="value"><strong>11:00 AM</strong></div></div><div class="row"><div class="label">Access</div><div class="value">Self check-in using the smart lock.</div><div class="note">Dummy door code: 2580# — replace before guest use.</div></div></div>`},
+amenities:{title:'Amenities',icon:'▣',subtitle:'What we provide',body:`<div class="detail-hero"><div class="big-icon">▣</div><h2>Amenities</h2><p>Everything provided for a comfortable stay.</p></div><div class="info"><div class="row"><div class="value">• Air conditioning<br>• High-speed Wi-Fi<br>• Smart TV<br>• Hot water<br>• Refrigerator<br>• Washing machine<br>• Fully equipped kitchen<br>• Towels and basic toiletries<br>• Iron and ironing board<br>• Free parking</div></div></div>`},
+know:{title:'Things to Know',icon:'ⓘ',subtitle:'Helpful tips',body:`<div class="detail-hero"><div class="big-icon">ⓘ</div><h2>Things to Know</h2><p>A few helpful tips for your stay.</p></div><div class="info"><div class="row"><div class="label">Electricity</div><div class="value">Please switch off AC and lights when leaving.</div></div><div class="row"><div class="label">Hot Water</div><div class="value">Hot water is available through the geyser.</div></div><div class="row"><div class="label">Support</div><div class="value">Contact the host if you need assistance.</div></div></div><div class="actions"><a class="btn" href="tel:+919876543210">📞 Call Host</a><a class="btn gold" href="https://wa.me/919876543210">💬 WhatsApp Host</a></div>`},
+directions:{title:'Directions',icon:'⌾',subtitle:'Finding us',body:`<div class="detail-hero"><div class="big-icon">⌾</div><h2>Directions</h2><p>Find your way to the property.</p></div><div class="info"><div class="row"><div class="label">Property</div><div class="value">Urban Nest, Gachibowli, Hyderabad</div></div><div class="row"><div class="label">Landmark</div><div class="value">Near Main Road / Central Mall</div><div class="note">Dummy address — replace with your exact address.</div></div></div><div class="actions"><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Gachibowli%2C%20Hyderabad">🗺️ Open in Google Maps</a></div>`},
+explore:{title:'Explore the Area',icon:'◫',subtitle:'Eat, see and do',body:`<div class="detail-hero"><div class="big-icon">◫</div><h2>Explore the Area</h2><p>Nearby places and useful services.</p></div><div class="info"><div class="row"><div class="value"><strong>🍽️ Restaurants</strong><br>Local restaurants and cafés within 5–10 minutes.</div></div><div class="row"><div class="value"><strong>🛒 Shopping</strong><br>Supermarkets and convenience stores nearby.</div></div><div class="row"><div class="value"><strong>☕ Cafés</strong><br>Popular coffee shops around Gachibowli.</div></div><div class="row"><div class="value"><strong>🏥 Pharmacy</strong><br>24/7 pharmacy available nearby.</div></div><div class="row"><div class="value"><strong>🚇 Metro</strong><br>Raidurg Metro Station — approximately 10–15 minutes by car.</div></div></div>`},
+rules:{title:'House Rules',icon:'▤',subtitle:'For a pleasant stay',body:`<div class="detail-hero"><div class="big-icon">▤</div><h2>House Rules</h2><p>Please help us keep the property comfortable for everyone.</p></div><div class="info"><div class="row"><div class="value">• No parties or events.<br>• No smoking inside.<br>• Keep noise reasonable, especially after 10 PM.<br>• No additional guests without approval.<br>• Treat furniture and appliances with care.<br>• Report damage promptly.<br>• Do not move furniture between rooms.</div></div></div>`},
+before:{title:'Before You Go',icon:'✓',subtitle:'Quick check-out checklist',body:`<div class="detail-hero"><div class="big-icon">✓</div><h2>Before You Go</h2><p>A quick checklist before leaving.</p></div><div class="info"><div class="row"><div class="value">☐ Check your belongings.<br>☐ Switch off lights and AC.<br>☐ Close windows and taps.<br>☐ Dispose of food and waste.<br>☐ Lock the main door.<br>☐ Complete check-out instructions.<br>☐ Message the host after leaving.</div></div></div>`}
+};
+function openDetail(id){const x=data[id];document.getElementById('home').classList.add('hidden');document.getElementById('detailTitle').textContent=x.title;document.getElementById('detailContent').innerHTML=x.body;document.getElementById('detail').classList.add('active');window.scrollTo(0,0);history.pushState({page:id},'', '#'+id)}
+function goHome(){document.getElementById('detail').classList.remove('active');document.getElementById('home').classList.remove('hidden');window.scrollTo(0,0);history.pushState({},'',location.pathname)}
+window.addEventListener('popstate',()=>goHome());
+</script>
 </body>
 </html>
