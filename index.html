@@ -368,6 +368,70 @@ button{appearance:none}
 <section id="detail" class="detail" aria-live="polite"></section>
 </div>
 <script>
+// ============================================================
+// ✏️ EDIT YOUR PROPERTY INFORMATION HERE
+// ============================================================
+
+const PROPERTY = {
+
+  // ───────── PAGE NAMES ─────────
+  pages: {
+    wifi: "WI-FI",
+    checkin: "Check In",
+    amenities: "Amenities",
+    know: "Things to Know",
+    directions: "Directions",
+    explore: "Explore the Area",
+    rules: "House Rules",
+    checkout: "Before You Go"
+  },
+
+  // ───────── WI-FI ─────────
+  wifi: {
+    network: "UrbanNest_Guest",
+    password: "Welcome@123"
+  },
+
+  // ───────── CHECK-IN / OUT ─────────
+  checkin: {
+    time: "2:00 PM",
+    accessCode: "2580#"
+  },
+
+  checkout: {
+    time: "11:00 AM"
+  },
+
+  // ───────── CONTACT ─────────
+  contact: {
+    phone: "+919876543210",
+    whatsapp: "919876543210"
+  },
+
+  // ───────── PROPERTY ─────────
+  property: {
+    name: "Urban Nest",
+    address: "Gachibowli, Hyderabad",
+    landmark: "Near Main Road / Central Mall",
+    mapsUrl: "YOUR GOOGLE MAPS LINK"
+  },
+
+  // ───────── AMENITIES ─────────
+  amenities: [
+    "High-Speed Wi-Fi",
+    "Air Conditioning",
+    "Smart TV",
+    "Hot Water",
+    "Refrigerator",
+    "Washing Machine",
+    "Kitchen",
+    "Towels & Toiletries",
+    "Iron",
+    "Free Parking"
+  ]
+
+};
+
 const icons={
 wifi:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round"><path d="M3.5 9.5a18 18 0 0 1 17 0"/><path d="M6.5 13a12.5 12.5 0 0 1 11 0"/><path d="M9.5 16.5a7 7 0 0 1 5 0"/><circle cx="12" cy="20" r=".8" fill="currentColor" stroke="none"/></svg>',
 clock:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3 2"/></svg>',
