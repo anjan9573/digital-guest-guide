@@ -89,34 +89,24 @@ button:focus-visible,a:focus-visible{outline:2px solid #C9A96B;outline-offset:3p
 .hero-brand{
   position:absolute;
   z-index:2;
-  top:calc(18px + env(safe-area-inset-top));
+  top:calc(7px + env(safe-area-inset-top));
   left:50%;
   transform:translateX(-50%);
-  width:max-content;
-  text-align:center;
-  color:#0F3B32;
-  text-shadow:0 1px 12px rgba(250,247,239,.42);
+  width:min(210px,58vw);
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  pointer-events:none;
+  filter:drop-shadow(0 1px 9px rgba(250,247,239,.28));
 }
-.brand-name{
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:19px;
-  line-height:1;
-  font-weight:400;
-  letter-spacing:2px;
-  white-space:nowrap;
+.hero-logo{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:198px;
+  object-fit:contain;
 }
-.brand-lead{
-  font-size:1.14em;
-  line-height:0;
-}
-.brand-tagline{
-  margin-top:8px;
-  font-size:7.2px;
-  line-height:1.2;
-  letter-spacing:3.1px;
-  font-weight:600;
-  white-space:nowrap;
-}
+.brand-name,.brand-lead,.brand-tagline{display:none;}
 .home-intro{
   position:relative;
   z-index:2;
@@ -258,6 +248,7 @@ button:focus-visible,a:focus-visible{outline:2px solid #C9A96B;outline-offset:3p
 }
 @media(min-width:400px){
   .hero-image{height:224px}
+  .hero-brand{width:224px}
   .item{min-height:74px}
 }
 @media(min-width:600px){
@@ -337,8 +328,7 @@ button:focus-visible,a:focus-visible{outline:2px solid #C9A96B;outline-offset:3p
   <div class="hero-image">
     <img src="assets/welcome-hero.png" alt="HomeFeel Stays premium living room">
     <div class="hero-brand" aria-label="HomeFeel Stays">
-      <div class="brand-name"><span class="brand-lead">H</span>OMEFEEL <span class="brand-lead">S</span>TAYS</div>
-      <div class="brand-tagline">STAY · RELAX · BELONG</div>
+      <img class="hero-logo" src="assets/homefeel-stays-logo.png" alt="HomeFeel Stays">
     </div>
   </div>
   <div class="home-intro">
