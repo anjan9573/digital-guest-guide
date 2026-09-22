@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111111">
+<title>Digital Guest Guide</title>
+<style>
+:root{--bg:#f6f4ef;--card:#fff;--text:#1d1d1b;--muted:#6d6a64;--accent:#b08a45;--line:#e8e3da}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+main{max-width:620px;margin:auto;padding:22px 16px 40px}.hero{text-align:center;padding:24px 8px 18px}.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:11px;color:var(--accent);font-weight:700}.hero h1{font-family:Georgia,serif;font-size:34px;margin:8px 0 6px}.hero p{margin:0;color:var(--muted);font-size:15px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;margin:12px 0;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.035)}
+.card h2{font-size:17px;margin:0;padding:17px 18px;border-bottom:1px solid var(--line)}.content{padding:16px 18px;color:#45423d;line-height:1.6;font-size:14px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px}.tile{display:block;text-decoration:none;color:var(--text);background:#faf9f6;border:1px solid var(--line);border-radius:14px;padding:15px}.tile b{display:block;font-size:14px;margin-bottom:4px}.tile span{font-size:12px;color:var(--muted)}
+.btn{display:block;text-align:center;background:var(--text);color:#fff;text-decoration:none;border-radius:12px;padding:12px;margin-top:12px;font-weight:600}.footer{text-align:center;color:var(--muted);font-size:12px;padding:24px 0 4px}
+@media(max-width:390px){.grid{grid-template-columns:1fr}.hero h1{font-size:30px}}
+</style>
+</head>
+<body>
+<main>
+<section class="hero"><div class="eyebrow">Welcome</div><h1>Digital Guest Guide</h1><p>Everything you need for a comfortable stay.</p></section>
+<div class="card"><div class="grid">
+<a class="tile" href="#wifi"><b>📶 Wi‑Fi</b><span>Internet details</span></a>
+<a class="tile" href="#checkin"><b>🔑 Check‑In</b><span>Arrival information</span></a>
+<a class="tile" href="#checkout"><b>🧳 Check‑Out</b><span>Departure steps</span></a>
+<a class="tile" href="#amenities"><b>✨ Amenities</b><span>What is available</span></a>
+<a class="tile" href="#know"><b>ℹ️ Things to Know</b><span>Useful information</span></a>
+<a class="tile" href="#directions"><b>📍 Directions</b><span>Find the property</span></a>
+<a class="tile" href="#explore"><b>🌆 Explore</b><span>Nearby places</span></a>
+<a class="tile" href="#rules"><b>🏠 House Rules</b><span>Please note</span></a>
+</div></div>
+<section class="card" id="wifi"><h2>📶 Wi‑Fi</h2><div class="content"><b>Network:</b> Guest Wi‑Fi<br><b>Password:</b> Shared at check‑in.</div></section>
+<section class="card" id="checkin"><h2>🔑 Check‑In</h2><div class="content">Check‑in details and access instructions will be provided before arrival.</div></section>
+<section class="card" id="checkout"><h2>🧳 Check‑Out</h2><div class="content">Please check out at the agreed time and leave the property tidy. Follow the departure instructions provided for your stay.</div></section>
+<section class="card" id="amenities"><h2>✨ Amenities</h2><div class="content">Air conditioning • Hot water • Kitchen facilities • TV • Wi‑Fi • Essential household amenities.</div></section>
+<section class="card" id="know"><h2>ℹ️ Things to Know</h2><div class="content">Please use the property responsibly and contact your host if you need assistance during your stay.</div></section>
+<section class="card" id="directions"><h2>📍 Directions</h2><div class="content">Use your preferred map application for directions to the property.</div></section>
+<section class="card" id="explore"><h2>🌆 Explore the Area</h2><div class="content">Nearby restaurants, shopping, attractions and essential services can be added here.</div></section>
+<section class="card" id="rules"><h2>🏠 House Rules</h2><div class="content">Respect neighbours • No parties or events • Keep noise reasonable • No smoking indoors • Report damage promptly.</div></section>
+<section class="card"><h2>✅ Before You Go</h2><div class="content">Check your belongings, switch off lights and AC, close windows, and follow the check‑out instructions.</div></section>
+<div class="footer">Guest information • Mobile friendly • Available 24/7</div>
+</main>
+</body>
+</html>
