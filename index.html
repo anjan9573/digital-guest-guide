@@ -358,7 +358,10 @@ button:focus-visible,a:focus-visible{outline:2px solid #C9A96B;outline-offset:3p
 
 @media(min-width:600px){body{padding:24px 0;background:var(--bg)}.app{border-radius:0;box-shadow:none}}
 </style>
-</head>
+<style>
+.admin-launch{position:fixed;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:900;width:36px;height:36px;border:1px solid #D8CCB8;border-radius:50%;background:#FAF7EF;color:#9A7538;font-size:16px;opacity:.72;cursor:pointer;box-shadow:0 3px 12px rgba(40,32,20,.08)}
+.admin-launch:hover{opacity:1}
+</style></head>
 <body>
 <div class="app">
 <main id="home">
@@ -574,5 +577,6 @@ document.addEventListener("click",e=>{
 });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.4/build/qrcode.min.js"></script>
+<button class="admin-launch" type="button" aria-label="Open admin" onclick="location.href='admin.html'">⚙</button>
 </body>
 </html>
