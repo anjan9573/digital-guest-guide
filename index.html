@@ -17,6 +17,8 @@
   --text:#1A1A1A;
   --muted:#6B6B6B;
   --border:#E4DED2;
+  --line:#E7E1D7;
+  --accent-soft:#F7F1E7;
   --gold:#C9A96B;
   --gold-dark:#9A7538;
   --row-radius:14px;
@@ -37,6 +39,7 @@ body{
 }
 button,a{font:inherit}
 button{appearance:none}
+button:focus-visible,a:focus-visible{outline:2px solid #C9A96B;outline-offset:3px}
 .app{
   width:100%;
   max-width:430px;
@@ -162,6 +165,7 @@ button{appearance:none}
   transition:background-color 180ms ease,transform 140ms ease,border-color 180ms ease,box-shadow 180ms ease;
 }
 .item:hover{background:#fff;border-color:#D9D0C0;box-shadow:0 4px 14px rgba(40,32,20,.055)}
+.item:focus-visible{border-color:#C9A96B;box-shadow:0 0 0 3px rgba(201,169,107,.16)}
 .item:active{background:#F5EFE6;transform:scale(.988);border-color:#D5C9B5}
 .item-icon{
   width:39px;
