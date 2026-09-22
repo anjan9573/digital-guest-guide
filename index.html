@@ -192,20 +192,55 @@ button:focus-visible,a:focus-visible{outline:2px solid #C9A96B;outline-offset:3p
 }
 .home-footer{
   text-align:center;
-  padding:25px 20px calc(19px + env(safe-area-inset-bottom));
-  font-size:10px;
-  line-height:1.3;
-  letter-spacing:3.5px;
-  color:#6B6B6B;
-  text-transform:uppercase;
+  padding:31px 20px calc(23px + env(safe-area-inset-bottom));
+  color:#756F67;
 }
 .home-footer:before{
   content:"";
   display:block;
-  width:34px;
+  width:30px;
   height:1px;
-  background:var(--gold);
-  margin:0 auto 11px;
+  background:#C9A96B;
+  margin:0 auto 15px;
+  opacity:.8;
+}
+.footer-message{
+  margin:0 auto;
+  max-width:280px;
+  font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  font-size:18px;
+  line-height:1.2;
+  font-weight:400;
+  letter-spacing:.15px;
+  color:#0F3B32;
+}
+.footer-mark{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  margin:13px auto 0;
+  color:#C9A96B;
+}
+.footer-mark:before,.footer-mark:after{
+  content:"";
+  width:25px;
+  height:1px;
+  background:#C9A96B;
+  opacity:.7;
+}
+.footer-mark span{
+  font-size:12px;
+  line-height:1;
+}
+.footer-brand{
+  margin-top:12px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:9px;
+  line-height:1.2;
+  font-weight:500;
+  letter-spacing:3px;
+  color:#6B6B6B;
 }
 .home-footer span{display:none}
 @media(max-width:374px){
@@ -342,7 +377,11 @@ button:focus-visible,a:focus-visible{outline:2px solid #C9A96B;outline-offset:3p
     <span class="item-copy"><span class="item-title">Before You Go</span><span class="item-sub">Quick checklist</span></span><span class="arrow" aria-hidden="true">›</span>
   </button>
 </nav>
-<footer class="home-footer">HOMEFEEL STAYS</footer>
+<footer class="home-footer">
+  <p class="footer-message">Stay Comfortable • Feel at Home</p>
+  <div class="footer-mark" aria-hidden="true"><span>♥</span></div>
+  <div class="footer-brand">HOMEFEEL STAYS</div>
+</footer>
 </main>
 <section id="detail" class="detail" aria-live="polite"></section>
 </div>
