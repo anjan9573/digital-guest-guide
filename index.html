@@ -40,7 +40,7 @@ function renderDetail(id,replace=false){
  const x=data[id]; if(!x)return;
  document.getElementById("home").classList.add("hidden");
  const d=document.getElementById("detail");
- d.innerHTML='<div class="detail-hero-photo" style="background-image:url("'+x.hero+'")"><div class="hero-nav"><button class="round-btn" onclick="goHome()">‹</button><button class="round-btn" onclick="goHome()">•••</button></div><div class="hero-caption"><h2>'+x.title+'</h2><p>'+x.kicker+'</p></div></div>'+x.body;
+ d.innerHTML='<div class="detail-hero-photo" style="background-image:url(\''+x.hero+'\')"><div class="hero-nav"><button class="round-btn" onclick="goHome()">‹</button><button class="round-btn" onclick="goHome()">•••</button></div><div class="hero-caption"><h2>'+x.title+'</h2><p>'+x.kicker+'</p></div></div>'+x.body;
  d.classList.add("active"); window.scrollTo(0,0);
  if(replace) history.replaceState({page:id},"","#"+id); else history.pushState({page:id},"","#"+id);
 }
